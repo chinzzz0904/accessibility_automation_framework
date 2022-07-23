@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name=" Accessibility My Account Testing Suite">
+	<test name="QAEnvironmentTestsWorking" thread-count="15">
+		<parameter name="QAENVURL" value="https://ps-id.taxslayer.com/myaccount/" />
+		<classes>
+			<class name="com.TaxSlayer.testClasses.LoginPageExecution" />
+			<class name="com.TaxSlayer.testClasses.UserConsoleExecution" />
+			<class name="com.TaxSlayer.testClasses.MessageCenterExecution" />
+			<class name="com.TaxSlayer.testClasses.ViewDetailsExecution" />
+			<class name="com.TaxSlayer.testClasses.TransHistPageExecution" />
+			<class name="com.TaxSlayer.testClasses.TrackRefundStatusExecution" />
+			<class name="com.TaxSlayer.testClasses.SecurelyIDPackageDetailsExecution" />
+			<class name="com.TaxSlayer.testClasses.SecurelyIDOfferExecution" />
+			<class name="com.TaxSlayer.testClasses.SecurelyIDEnrollExecution" />
+			<class name="com.TaxSlayer.testClasses.MobileAppSettingsExecution" />
+			<class name="com.TaxSlayer.testClasses.HelpandSupportTechQueExecution" />
+			<class name="com.TaxSlayer.testClasses.HelpandSupportTaxExecution" />
+			<class name="com.TaxSlayer.testClasses.HelpandSupportExecution" />
+			<class name="com.TaxSlayer.testClasses.HelpandSupportArticlePageExecution" />		  
+  			<class name="com.TaxSlayer.testClasses.HurdlrWarningExecution" />
+		</classes>
+	</test>
+
+	<test name="QAEnvironmentTestDataRequired" enabled='false' thread-count="8">
+		<parameter name="QAENVURL1" value="https://ps-id.taxslayer.com/myaccount/" />
+		<classes>
+			<class name="com.TaxSlayer.testClasses.ChargeSuccessExecution" />
+			<class name="com.TaxSlayer.testClasses.ChargeCancelledExecution" />
+			<class name="com.TaxSlayer.testClasses.CallChargeAppExecution" />
+			<class name="com.TaxSlayer.testClasses.PaymentInfoPageExecution" />
+			<class name="com.TaxSlayer.testClasses.PoliciesPrivacyPolicyExecution" />
+			<class name="com.TaxSlayer.testClasses.PoliciesLicenseAgreementExecution" />
+			<class name="com.TaxSlayer.testClasses.ChargeSuccessExecution" />
+		</classes>
+	</test>
+
+	<test name="LocalEnvironmentTest" enabled='false' thread-count="2">
+		<parameter name="LOCALENVURL" value="http://localhost:3000/myaccount/" />
+		<classes>
+			<class name="com.TaxSlayer.testClasses.SessionTimeoutPopupExecution" />
+			<class name="com.TaxSlayer.testClasses.DiscountOfferExecution" />
+		</classes>
+	</test>
+
+</suite>

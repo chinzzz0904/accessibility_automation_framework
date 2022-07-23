@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-05-30T14:33:02 IST" name=" Accessibility My Account Testing Suite" finished-at="2022-05-30T14:33:49 IST" duration-ms="46570">
+    <groups>
+    </groups>
+    <test started-at="2022-05-30T14:33:02 IST" name="QAEnvironmentTestsWorking" finished-at="2022-05-30T14:33:49 IST" duration-ms="46570">
+      <class name="com.TaxSlayer.testClasses.HurdlrWarningExecution">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.TaxSlayer.testClasses.HurdlrWarningExecution@2c35e847]" started-at="2022-05-30T14:33:02 IST" name="setup" finished-at="2022-05-30T14:33:06 IST" duration-ms="3902" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="HurdlrWarningMethod(java.lang.String)[pri:0, instance:com.TaxSlayer.testClasses.HurdlrWarningExecution@2c35e847]" started-at="2022-05-30T14:33:06 IST" name="HurdlrWarningMethod" finished-at="2022-05-30T14:33:47 IST" duration-ms="40880" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://ps-id.taxslayer.com/myaccount/]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- HurdlrWarningMethod -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.TaxSlayer.testClasses.HurdlrWarningExecution@2c35e847]" started-at="2022-05-30T14:33:47 IST" name="teardown" finished-at="2022-05-30T14:33:49 IST" duration-ms="1757" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- com.TaxSlayer.testClasses.HurdlrWarningExecution -->
+    </test> <!-- QAEnvironmentTestsWorking -->
+  </suite> <!--  Accessibility My Account Testing Suite -->
+</testng-results>

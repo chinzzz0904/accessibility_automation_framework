@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [ Accessibility My Account Testing Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" parallel="classes" name="QA Environment Test(failed)">
+    <parameter name="QAENVURL" value="https://ps-id.taxslayer.com/myaccount/"/>
+    <classes>
+      <class name="com.TaxSlayer.testClasses.MessageCenterExecution">
+        <methods>
+          <include name="MessageCenterExecutionMethod"/>
+          <include name="teardown"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.TaxSlayer.testClasses.MessageCenterExecution -->
+      <class name="com.TaxSlayer.testClasses.PaymentInfoPageExecution">
+        <methods>
+          <include name="teardown"/>
+          <include name="setup"/>
+          <include name="PaymentInfoPageMethod"/>
+        </methods>
+      </class> <!-- com.TaxSlayer.testClasses.PaymentInfoPageExecution -->
+      <class name="com.TaxSlayer.testClasses.HelpandSupportArticlePageExecution">
+        <methods>
+          <include name="HelpandSupportMethod"/>
+          <include name="teardown"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.TaxSlayer.testClasses.HelpandSupportArticlePageExecution -->
+      <class name="com.TaxSlayer.testClasses.UserConsoleExecution">
+        <methods>
+          <include name="UserConsoleExecutionMethod" invocation-numbers="0"/>
+          <include name="teardown"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.TaxSlayer.testClasses.UserConsoleExecution -->
+      <class name="com.TaxSlayer.testClasses.MobileAppSettingsExecution">
+        <methods>
+          <include name="MobileAppSettingsExecutionMethod"/>
+          <include name="teardown"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.TaxSlayer.testClasses.MobileAppSettingsExecution -->
+      <class name="com.TaxSlayer.testClasses.SecurelyIDPackageDetailsExecution">
+        <methods>
+          <include name="teardown"/>
+          <include name="setup"/>
+          <include name="SecurelyIDExecutionMethod"/>
+        </methods>
+      </class> <!-- com.TaxSlayer.testClasses.SecurelyIDPackageDetailsExecution -->
+      <class name="com.TaxSlayer.testClasses.LoginPageExecution">
+        <methods>
+          <include name="LoginPageExecutionMethod"/>
+          <include name="teardown"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.TaxSlayer.testClasses.LoginPageExecution -->
+      <class name="com.TaxSlayer.testClasses.SecurelyIDOfferExecution">
+        <methods>
+          <include name="teardown"/>
+          <include name="setup"/>
+          <include name="SecurelyIDExecutionMethod"/>
+        </methods>
+      </class> <!-- com.TaxSlayer.testClasses.SecurelyIDOfferExecution -->
+      <class name="com.TaxSlayer.testClasses.TrackRefundStatusExecution">
+        <methods>
+          <include name="TrackRefundStatusMethod"/>
+          <include name="teardown"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.TaxSlayer.testClasses.TrackRefundStatusExecution -->
+      <class name="com.TaxSlayer.testClasses.HelpandSupportTaxExecution">
+        <methods>
+          <include name="teardown"/>
+          <include name="setup"/>
+          <include name="HelpandSupportTaxMethod"/>
+        </methods>
+      </class> <!-- com.TaxSlayer.testClasses.HelpandSupportTaxExecution -->
+      <class name="com.TaxSlayer.testClasses.SecurelyIDEnrollExecution">
+        <methods>
+          <include name="teardown"/>
+          <include name="SecurelyIDExecutionMethod"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.TaxSlayer.testClasses.SecurelyIDEnrollExecution -->
+      <class name="com.TaxSlayer.testClasses.ChargeCancelledExecution">
+        <methods>
+          <include name="ChargeCancelledMethod"/>
+          <include name="teardown"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.TaxSlayer.testClasses.ChargeCancelledExecution -->
+      <class name="com.TaxSlayer.testClasses.ViewDetailsExecution">
+        <methods>
+          <include name="teardown"/>
+          <include name="setup"/>
+          <include name="HelpandSupportMethod"/>
+        </methods>
+      </class> <!-- com.TaxSlayer.testClasses.ViewDetailsExecution -->
+      <class name="com.TaxSlayer.testClasses.HelpandSupportExecution">
+        <methods>
+          <include name="HelpandSupportMethod"/>
+          <include name="teardown"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.TaxSlayer.testClasses.HelpandSupportExecution -->
+      <class name="com.TaxSlayer.testClasses.TransHistPageExecution">
+        <methods>
+          <include name="teardown"/>
+          <include name="setup"/>
+          <include name="TransHistPageExecutionMethod"/>
+        </methods>
+      </class> <!-- com.TaxSlayer.testClasses.TransHistPageExecution -->
+      <class name="com.TaxSlayer.testClasses.HelpandSupportTechQueExecution">
+        <methods>
+          <include name="teardown"/>
+          <include name="HelpandSupportMethod"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.TaxSlayer.testClasses.HelpandSupportTechQueExecution -->
+      <class name="com.TaxSlayer.testClasses.ChargeSuccessExecution">
+        <methods>
+          <include name="teardown"/>
+          <include name="setup"/>
+          <include name="ChargeCancelledMethod"/>
+        </methods>
+      </class> <!-- com.TaxSlayer.testClasses.ChargeSuccessExecution -->
+      <class name="com.TaxSlayer.testClasses.HurdlrWarningExecution">
+        <methods>
+          <include name="teardown"/>
+          <include name="setup"/>
+          <include name="HurdlrWarningMethod"/>
+        </methods>
+      </class> <!-- com.TaxSlayer.testClasses.HurdlrWarningExecution -->
+      <class name="com.TaxSlayer.testClasses.CallChargeAppExecution">
+        <methods>
+          <include name="CallChargeAppMethod"/>
+          <include name="teardown"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.TaxSlayer.testClasses.CallChargeAppExecution -->
+    </classes>
+  </test> <!-- QA Environment Test(failed) -->
+</suite> <!-- Failed suite [ Accessibility My Account Testing Suite] -->

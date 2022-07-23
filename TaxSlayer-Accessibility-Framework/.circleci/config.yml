@@ -1,0 +1,109 @@
+version: 2
+
+defaults: &defaults
+    docker:
+      - image: circleci/openjdk:11-node-browsers
+    working_directory: ~/axe-selenium-java
+
+jobs:
+  dependencies:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          key: v1-mvn-deps-{{ checksum "pom.xml" }}
+      - restore_cache:
+          key: v1-npm-deps-{{ checksum "package-lock.json" }}
+      - run: mvn install -DskipTests
+      - save_cache:
+          key: v1-mvn-deps-{{ checksum "pom.xml" }}
+          paths:
+            - ~/.m2
+      - save_cache:
+          key: v1-npm-deps-{{ checksum "package-lock.json" }}
+          paths:
+            - node_modules
+  tests:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          key: v1-mvn-deps-{{ checksum "pom.xml" }}
+      - restore_cache:
+          key: v1-npm-deps-{{ checksum "package-lock.json" }}
+      - run:
+          command: node src/test/resources/test-app.js
+          background: true
+      - run:
+          command: cd node_modules/axe-test-fixtures/fixtures && python2 -m SimpleHTTPServer 8001
+          background: true
+      - run: sleep 5 # sleep to allow the server some time to boot
+      - run: mvn test
+
+  snapshot_release:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          key: v1-mvn-deps-{{ checksum "pom.xml" }}
+      - restore_cache:
+          key: v1-npm-deps-{{ checksum "package-lock.json" }}
+      - run: echo "$GPG_PRIVATE_KEY" | base64 --decode | gpg --import
+      - run: echo "default-key 7701193A898A849383D3E8B49F8AFEACBF07F7C4" > ~/.gnupg/gpg.conf
+      - run: python .circleci/snapshot.py
+      - run: .circleci/publish.sh
+
+  release:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          key: v1-mvn-deps-{{ checksum "pom.xml" }}
+      - restore_cache:
+          key: v1-npm-deps-{{ checksum "package-lock.json" }}
+      - run: echo "$GPG_PRIVATE_KEY" | base64 --decode | gpg --import
+      - run: echo "default-key 7701193A898A849383D3E8B49F8AFEACBF07F7C4" > ~/.gnupg/gpg.conf
+      - run: .circleci/publish.sh
+
+  github_release:
+    docker:
+      - image: circleci/golang:1.10
+    steps:
+      - checkout
+      - run: go get gopkg.in/aktau/github-release.v0
+      - run:
+          name: Download and run GitHub release script
+          command: |
+            curl https://raw.githubusercontent.com/dequelabs/attest-release-scripts/develop/src/java-github-release.sh -s -o ./java-github-release.sh
+            chmod +x ./java-github-release.sh
+            ./java-github-release.sh
+
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - dependencies
+      - tests:
+          requires:
+            - dependencies
+      - snapshot_release:
+          context: html-tools
+          requires:
+            - dependencies
+            - tests
+          filters:
+            branches:
+              only: develop
+      - release:
+          context: html-tools
+          requires:
+            - dependencies
+            - tests
+          filters:
+            branches:
+              only: master
+      - github_release:
+          context: html-tools
+          requires:
+            - release
